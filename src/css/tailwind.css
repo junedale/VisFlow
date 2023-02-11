@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    button {
+        @apply flex justify-center items-center gap-2 px-2 rounded text-white w-full h-8
+    }
+}
+
+@layer components {
+    .primary {
+        @apply bg-blue-800 hover:bg-blue-700 transition ease-in-out duration-100
+    }
+
+    .secondary {
+        @apply bg-neutral-800 hover:bg-neutral-700 transition ease-in-out duration-100
+    }
+
+    .success {
+        @apply bg-emerald-800 hover:bg-emerald-700 transition ease-in-out duration-100
+    }
+
+    .panel {
+        @apply absolute bg-neutral-900 z-50
+    }
+
+    .panel.side {
+        @apply top-0 left-0 w-1/5 h-screen p-4
+    }
+
+    .control {
+        @apply grid grid-cols-2 gap-2
+    }
+
+    .control button:last-child {
+        @apply col-span-2
+    }
+
+    .side .accordion {
+        @apply space-y-2 mt-10
+    }
+
+    .accordion-header {
+        @apply justify-between secondary
+    }
+
+    #stage {
+        background-position: 0 0;
+        background-size: 8rem 8rem;
+        background-image: linear-gradient(rgb(92, 92, 92) .1rem, transparent .1rem), linear-gradient(90deg, rgb(92, 92, 92) .1rem, transparent .1rem);
+        @apply absolute top-0 left-0 bg-zinc-700 w-screen h-screen z-10
+    }
+}
